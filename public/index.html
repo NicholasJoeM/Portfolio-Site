@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio Webpage</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <nav id="navbar" class="nav">
+    <img src="Nick Pro Photo.jpg" alt="Nick's Photo" class="nav-photo" />
+    <ul class="nav-list">
+      <li>
+        <a href="#welcome-section" id="about-link">About</a>
+      </li>
+      <li>
+        <a href="#projects">Work</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section id="welcome-section" class="welcome-section">
+    <h1>Welcome, I'm Nick</h1>
+    <p class="intro">a developer</p>
+    <p class="more-info animate-welcome">Uncover more about me and my recent coding journey <a
+        href="https://nicholasjoem.github.io/Magazine-Article/" target="_blank">here</a>.</p>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2 class="projects-section-header">
+      These are <b>some</b> of my projects
+    </h2>
+    <div class="projects-grid">
+      <div class="project">
+        <a href="https://worldwide-weather-app-701332f850b6.herokuapp.com/" target="_blank" class="project-tile">
+          <p class="project-title">Global Weather App</p>
+        </a>
+        <a href="https://github.com/NicholasJoeM/unit5proj" target="_blank" class="project-github-link">Github Repo</a>
+      </div>
+      <div class="project">
+        <a href="https://tsk-manager-bc80dc3b05b0.herokuapp.com/" target="_blank">
+          <p class="project-title">Basic Task Manager with React</p>
+        </a>
+        <a href="https://github.com/NicholasJoeM/specsCapstone" target="_blank" class="project-github-link">Github
+          Repo</a>
+      </div>
+      <div class="project">
+        <a href="https://tolkien-cardgame-95759806af7b.herokuapp.com/" target="_blank">
+          <p class="project-title">Middle-Earth Card Quest</p>
+        </a>
+        <a href="https://github.com/NicholasJoeM/specsCapstone" target="_blank" class="project-github-link">Github
+          Repo</a>
+      </div>
+      <div class="project">
+        <a href="https://nicholasjoem.github.io/Survey-Form/" target="_blank">
+          <p class="project-title">Survey Form</p>
+        </a>
+        <a href="https://github.com/NicholasJoeM/Survey-Form" target="_blank" class="project-github-link">Github
+          Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-section-header">
+      <h2>Let's work together...</h2>
+      <p>How do you take your coffee?</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.facebook.com/nick.mills.1654/" target="_blank" class="btn-contact-details"><i
+          class="fab fa-facebook-square"></i> Facebook</a>
+      <a id="profile-link" href="https://github.com/NicholasJoeM" target="_blank" class="btn-contact-details"><i
+          class="fab fa-github"></i> Github</a>
+      <a href="https://twitter.com/NickyyMills" target="_blank" class="btn-contact-details"><i
+          class="fab fa-twitter"></i> Twitter</a>
+      <a href="mailto:nj.mills936@gmail.com" target="_blank" class="btn-contact-details"><i class="fas fa-at"></i> Send
+        an email</a>
+      <span id="or">or</span>
+      <a href="tel:973-936-2621" class="btn-contact-details" target="blank"><i class="fas fa-mobile-alt"></i> Call
+        me</a>
+    </div>
+    <div class="contact-form">
+      <h2>Contact Details:</h2>
+      <p>I'll come to you!</p>
+      <form id="myContactForm">
+        <input type="text" name="name" placeholder="Your Name" autocomplete="off">
+        <input type="email" name="email" placeholder="Your Email" autocomplete="off">
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit" id="btn">Send Message</button>
+      </form>
+      <!-- <div id="success-message" style="display: none;">
+          Thanks for reaching out!
+      </div> -->
+      <!-- Add an element for the modal -->
+      <div class="custom-alert" id="customAlert">
+        <div class="custom-alert-content">
+          <span class="close-btn" onclick="closeAlert()">&times;</span>
+          <p>Your submission was successful!</p>
+          <button onclick="closeAlert()">OK</button>
+        </div>
+      </div>
+    </div>
+    <p class="cnt-p" id="contact-paragraph">(**For security reasons, submissions to this section have been temporarily disabled. Please refer to the above links if you need a developer and would like to connect with me.**)</p>
+  </section>
+  <footer>
+    <p id="ftr-msg">
+      This is not a sample portfolio. The contact details given are real and
+      meant to provide a constructed layout. This page was built using HTML, CSS, & JS. Find its github repo <a
+        id="port-repo-link" target="_blank">here</a>.
+    </p>
+    <p>
+      &copy; Created by
+      <a href="https://www.linkedin.com/in/nicholas-mills-178aa0150/
+
+" target="_blank">Nicholas Mills <i class="ph ph-waves"></i></a>
+    </p>
+  </footer>
+  <script src="animate.js"></script>
+</body>
+
+</html>

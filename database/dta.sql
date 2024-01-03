@@ -1,0 +1,7 @@
+CREATE TABLE ContactForm (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  name NVARCHAR(100),
+  email NVARCHAR(100),
+  message NVARCHAR(MAX),
+  submission_date DATETIME DEFAULT GETDATE()
+);

@@ -1,0 +1,440 @@
+:root { 
+  --main-white: #f0f0f0;
+  --main-red: #31bebe;
+  --main-blue: linear-gradient(to left, #31bebe 0%, #181719 100%);
+  --main-gray: #303841; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+}
+
+h1,
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--main-red);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-photo {
+  width: 75px;
+  height: 80px;
+  object-fit: cover;
+  margin: 3px; /* Adjust the margin to push it to the far left */
+  border-radius: 50%;
+  margin-right: auto; /* Add this to push it to the far left */
+  margin-left: 13px;
+  box-shadow: 9px 0px 9px #303841;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 1.5rem 2rem;
+}
+
+.nav-list a:hover {
+  background: var(--main-blue);
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%) 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.welcome-section p{
+  font-size: 3rem;
+  color: var(--main-red);
+  font-weight: 200;
+  font-style: italic;
+}
+
+.animate-welcome {
+  animation: fadeIn 2.2s ease-in;
+}
+
+.welcome-section .more-info.animate-welcome {
+  font-size: 2.2rem;
+  color: orange;
+  font-weight: 200;
+  font-style: italic;
+  opacity: 0; 
+  animation: fadeIn 2.2s ease-in forwards; 
+  text-align: center;
+  margin-top: 70px;
+  animation-delay: 1.2s; 
+}
+
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--main-blue);
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  /* border-bottom: 0.2rem solid var(--main-white); */
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  border: 1px solid #fff; /* Add a white border */
+  padding: 20px; /* Add padding for space around the content */
+
+  /* Ensure the contents are centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title,
+.project-github-link {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+  text-align: center; /* Center-align text */
+  margin-bottom: 10px; /* Add some space between the title and link */
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 80vh;
+  padding: 0 2rem;
+  background: var(--main-gray);
+}
+
+.contact-section-header h2 {
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header p {
+  font-style: italic;
+  color: orange;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-contact-details {
+  padding: 0 4px;
+}
+
+#or {
+  padding: 0 4px;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.contact-form p{
+  font-style: italic;
+  color: var(--main-red);
+}
+
+#myContactForm {
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* Make input fields and textarea full width */
+  margin-bottom: 15px; /* Add some space between fields */
+  background: inherit;
+  border: 1px solid #fff;
+  border-radius: 1.5px;
+  box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.5);
+  color: white
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: white;
+}
+
+#btn {
+  border-color: white;
+  background-color: inherit;
+  color: white;
+  padding: 5px 10px;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+/* Styles for the custom alert */
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-gray);
+  border: 2px solid var(--main-white);
+  padding: 20px;
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+.custom-alert-content p{
+  text-align: center;
+  font-weight: bold;
+  color: var(--main-white);
+}
+
+.custom-alert-content button {
+  cursor: pointer; 
+  width: 40px;
+  color: var(--main-red);
+  border: 1px solid var(--main-red);
+  /* font-weight: bold; */
+  background-color: var(--main-gray);
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  color: orange;
+}
+
+.cnt-p {
+  margin-top: 22px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 700px) {
+  .cnt-p {
+    min-width: 445px;
+    margin-bottom: 13px;
+  }
+}
+
+/* Define a shaking animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Apply the animation to the cnt-p element */
+.shake-animation {
+  animation: shake 0.4s ease-in-out;
+}
+
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;  
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
+}
+
+@media (max-width: 28.75em) {
+  .contact-section {
+    /* Adjust styles for smaller screens if needed */
+    min-height: 90vh; /* Example: increase height for smaller screens */
+  }
+
+  footer {
+    /* Adjust footer styles for smaller screens if needed */
+    padding: 3rem 1rem; /* Example: reduce footer padding for smaller screens */
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+footer p {
+  margin: 2rem;
+}
+
+#port-repo-link {
+  text-decoration: underline;
+}
+
+footer i {
+  vertical-align: middle;
+}
+
+/* @media (min-width: 768px) {
+  footer {
+    height: 150px;
+  }
+} */
