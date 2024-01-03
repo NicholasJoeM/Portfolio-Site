@@ -9,40 +9,40 @@ require('dotenv').config();
 app.use(express.static('public'));
 app.use(express.json());
 
-// const config = {
-//   server: process.env.DB_SERVER,
-//   database: process.env.DB_NAME,
-//   options: {
-//     enableArithAbort: true,
-//     encrypt: true,
-//     trustedConnection: true,
-//   },
-// };
+const config = {
+  server: process.env.DB_SERVER,
+  database: process.env.DB_NAME,
+  options: {
+    enableArithAbort: true,
+    encrypt: true,
+    trustedConnection: true,
+  },
+};
 
-// const pool = new sql.ConnectionPool(config);
-// const poolConnect = pool.connect();
+const pool = new sql.ConnectionPool(config);
+const poolConnect = pool.connect();
 
-// poolConnect.then(() => {
-//   console.log('Connected to SQL Server');
-// }).catch((err) => {
-//   console.error('Error connecting to SQL Server:', err);
-// });
+poolConnect.then(() => {
+  console.log('Connected to SQL Server');
+}).catch((err) => {
+  console.error('Error connecting to SQL Server:', err);
+});
 
-// pool.on('error', err => {
-//   console.error('SQL Server Pool Error:', err);
-// });
+pool.on('error', err => {
+  console.error('SQL Server Pool Error:', err);
+});
 
-// // Event listener for the exit signal
-// process.on('exit', () => {
-//   // Close the SQL connection pool
-//   pool.close(err => {
-//     if (err) {
-//       console.error('Error closing pool:', err);
-//     } else {
-//       console.log('Pool connections closed');
-//     }
-//   });
-// });
+// Event listener for the exit signal
+process.on('exit', () => {
+  // Close the SQL connection pool
+  pool.close(err => {
+    if (err) {
+      console.error('Error closing pool:', err);
+    } else {
+      console.log('Pool connections closed');
+    }
+  });
+});
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
