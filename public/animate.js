@@ -77,6 +77,13 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
 });
 
 
+document.getElementById('call-me-link').addEventListener('click', function() {
+  var phoneNumber = '973-936-2621'; // Replace this with your actual phone number
+  var phoneNumberElement = document.getElementById('call-me-link');
+  if (phoneNumberElement) {
+    phoneNumberElement.textContent = 'Phone number: ' + phoneNumber;
+  }
+});
 
 
 // // Wait for the DOM content to be fully loaded
